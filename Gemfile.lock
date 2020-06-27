@@ -1,4 +1,20 @@
 GIT
+  remote: https://github.com/spree-contrib/spree_globalize.git
+  revision: 1b5036fa9f52da30c20b3fba5c9de1a8324affb9
+  branch: master
+  specs:
+    spree_globalize (3.4.0)
+      deface (~> 1.0)
+      friendly_id-globalize
+      globalize
+      i18n_data
+      kaminari-i18n
+      rails-i18n
+      spree_core (>= 3.1.0, < 5.0)
+      spree_extension
+      spree_i18n
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: c2b5f8300db5399dcb8133cdc4639c167fca23b6
   specs:
@@ -126,8 +142,14 @@ GEM
     ffi (1.13.1)
     friendly_id (5.3.0)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha3)
+      friendly_id (>= 5.2.0, < 6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    globalize (5.3.0)
+      activemodel (>= 4.2, < 6.1)
+      activerecord (>= 4.2, < 6.1)
+      request_store (~> 1.0)
     glyphicons (1.0.2)
     highline (2.0.3)
     htmlentities (4.3.4)
@@ -249,6 +271,8 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    request_store (1.5.0)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -398,6 +422,7 @@ DEPENDENCIES
   spree (~> 4.1)
   spree_auth_devise (~> 4.1)
   spree_gateway (~> 3.7)
+  spree_globalize!
   spree_i18n!
   spring
   spring-watcher-listen (~> 2.0.0)
