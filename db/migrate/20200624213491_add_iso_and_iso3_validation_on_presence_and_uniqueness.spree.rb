@@ -1,8 +1,8 @@
 # This migration comes from spree (originally 20190305121659)
 class AddIsoAndIso3ValidationOnPresenceAndUniqueness < ActiveRecord::Migration[5.2]
   def up
-    Spree::Country.where.not(id: Spree::Country.group(:iso).select("min(id)")).destroy_all
-    Spree::Country.where.not(id: Spree::Country.group(:iso3).select("min(id)")).destroy_all
+    Spree::Country.where.not(id: Spree::Country.group(:iso).select('min(id)')).destroy_all
+    Spree::Country.where.not(id: Spree::Country.group(:iso3).select('min(id)')).destroy_all
 
     change_column_null(:spree_countries, :iso, false)
     change_column_null(:spree_countries, :iso3, false)

@@ -4,7 +4,7 @@ class RemoveTranslationsFromSpreeTables < SpreeExtension::Migration[4.2]
     # Don't migrate if we still use Globalize, i.e. through spree_globalize Gem
     return if defined?(Globalize)
 
-    %w(
+    %w[
       OptionType
       OptionValue
       ProductProperty
@@ -14,13 +14,14 @@ class RemoveTranslationsFromSpreeTables < SpreeExtension::Migration[4.2]
       Store
       Taxon
       Taxonomy
-    ).each do |class_name|
+    ].each do |class_name|
       migrate_translation_data!(class_name)
     end
   end
 
   def down
     return if defined?(Globalize)
+
     raise ActiveRecord::IrreversibleMigration
   end
 
